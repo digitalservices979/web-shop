@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.1, mobirise.com">
+  {% load static %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'core/images/phoenix-1440452_1280.jpg' %}" type="image/x-icon">
+  <meta name="description" content="">
+  
+  <title>FastShopping | {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'core/web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'core/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/soundcloud-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static 'core/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/shopping-cart/minicart-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'core/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'core/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'core/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'core/mobirise/css/mbr-additional.css' %}" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'core/css/font-awesome.min.css' %}">
+  {% block cascada %}{% endblock %}
+  
+  
+</head>
+<body>
+    <!--Cuadro de navegacion-->
+  <section class="menu cid-rrh0ggLlUx" once="menu" id="menu3-6">
+
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-5" href="{% url 'home' %}">
+                        FastShopping</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="{% url 'home' %}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                            Inicio</a>
+                    </li><li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'package' %}"><span class="mbri-shopping-bag mbr-iconfont mbr-iconfont-btn"></span>
+                            Artículos</a></li><li class="nav-item"><a class="nav-link link text-black display-4" href="{% url 'about' %}"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                            Saber más</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="{% url 'contact' %}"><span class="mbri-user mbr-iconfont mbr-iconfont-btn"></span>
+                            Contáctanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black display-4" href="{% url 'blog' %}"><span class="mbri-file mbr-iconfont mbr-iconfont-btn"></span>
+                            Blog
+                        </a>
+                    </li></ul>
+                
+                
+          </div>
+        </nav>
+    </section>
+    {% block content %}{% endblock %}
+
+<!--Pie de pagina-->
+<section class="cid-rrh2TuhnE0" id="footer3-h">
+
+    <div class="container-fluid">
+        <div class="row align-center justify-content-center">
+            <div class="col-lg-6 col-xl-4">
+                <div class="follow-section">
+                    <div class="follow-heading mbr-fonts-style align-left display-7">
+                        Síguenos
+                    </div>
+                    <div class="social-media pb-3 align-left">
+                        <ul class="list-inline aqui">
+                          <li class="list-inline-item">
+                            <a href="https://www.facebook.com/digitalservices9795">
+                              <i class="fa fa-facebook-f fa-2x"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="https://www.instagram.com/?hl=es-la">
+                              <i class="fa fa-instagram fa-2x"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="https://twitter.com/?lang=es">
+                              <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="https://www.youtube.com/">
+                              <i class="fa fa-youtube fa-2x"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a href="https://pe.linkedin.com/">
+                              <i class="fa fa-linkedin fa-2x"></i>
+                            </a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row column-menu">
+                    <div class="col-xl-5 col-md-6">
+                        <ul class="firstColumn align-left mbr-white mbr-fonts-style display-7">
+                            <li>Otoño</li>
+                            <li>Invierno</li>
+                            <li>Primavera</li>
+                            <li>Verano</li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-5 col-md-6">
+                        <ul class="secondColumn align-left mbr-white mbr-fonts-style display-7">
+                            <li>Casual</li>
+                            <li>Clásico</li>
+                            <li>Urbano</li>
+                            <li>Deportivo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-6 form-section">
+                <ul class="mbr-list list-inline align-left">
+                    
+                <li class="list-inline-item mbr-fonts-style display-7">Nuevas novedades</li></ul>
+                <div class="input-form">
+                    <span class="mbr-fonts-style form-text display-7">
+                      Suscríbete para recibir las últimas novedades sobre ventas, nuevos lanzamientos y más ...
+                    </span>
+                    <div class="form1" data-form-type="formoid">
+                        <!---Formbuilder Form--->
+                        <form action="#" method="POST" class="mbr-form form-with-styler" id="form">
+                          {% csrf_token %}
+                            <div class="form-row">
+                                <div class="alert alert-success col-12" id="resultado" style="display: none;"></div>
+                            </div>
+                            <div class="dragArea form-row">
+                                <div class="col form-group" data-for="email">
+                                    <input type="email" name="email" data-form-field="Email" required="required" class="form-control special-form display-7" id="email-footer3-h">
+                                </div>
+                                <div class="col-auto input-group-btn"><button type="submit" class="btn btn-secondary display-4">Subscribirse</button></div>
+                            </div>
+                        </form><!---Formbuilder Form--->
+                    </div>
+                </div>
+                <h3 class="subtext-1 mbr-fonts-style pb-3 display-7"></h3>
+                <h3 class="subtext-2 mbr-fonts-style display-7">
+                    Sistemas de pago soportados
+                </h3>
+                <ul class="card-support align-left">
+                    <li>
+                        <img src="{% static 'core/images/visa.png' %}" height="30" alt="Visa">
+                    </li>
+                    <li>
+                        <img src="{% static 'core/images/master-card.png' %}" height="30" alt="Master Card">
+                    </li>
+                    
+                    <li>
+                        <img src="{% static 'core/images/paypal.png' %}" height="30" alt="PayPal">
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+  <script src="{% static 'core/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'core/popper/popper.min.js' %}"></script>
+  <script src="{% static 'core/tether/tether.min.js' %}"></script>
+  <script src="{% static 'core/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'core/smoothscroll/smooth-scroll.js' %}"></script>
+  <script src="{% static 'core/dropdown/js/script.min.js' %}"></script>
+  <script src="{% static 'core/touchswipe/jquery.touch-swipe.min.js' %}"></script>
+  <script src="{% static 'core/theme/js/script.js' %}"></script>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      $('#form').submit(function(e) {
+            e.preventDefault();
+            var correo = $("#email-footer3-h").val();
+         $.ajax({
+             data: {'correo':correo},
+             url: 'subscriptores/',
+             type: 'POST',
+             success : function(data) {
+                    $("#resultado").html(data);
+                    $("#email-footer3-h").val("");
+                    $("#resultado").css({
+                      display:'block'
+                    });
+             },
+             error : function(message) {
+                     console.log(message);
+                     console.log("Hubo error en el ajax");
+                  }
+             });
+            });
+      $('#email-footer3-h').keyup(function(event) {
+        $("#resultado").css({
+                      display:'none'
+                    });
+      });
+    });
+  </script>
+  {% block js %}{% endblock %}
+  </body>
+</html>

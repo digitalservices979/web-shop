@@ -1,0 +1,252 @@
+{% extends "core/base_layout.html" %}
+{% load static %}
+{% block title %}Artículos{% endblock %}
+{% block cascada %}
+  <link rel="stylesheet" href="{% static 'core/gallery/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'core/css/shop-homepage.css' %}">
+  <style type="text/css">
+      #shop{
+        scroll-behavior: smooth;
+      }
+      #boton{
+        border-radius: 20px;
+        width: 100%;
+        height: 70%;
+        margin-left: 1px !important;
+      }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+
+<script>var shopcartSettings = {"shopcart_top_offset":120,"side_offset":40,"site_width":1150,"shopcart_icon_color":"#FFFFFF","shopcart_back_color":"#000000","shopcart_icon_size":40,"sc_count_color":"#FFFFFF","sc_count_back_color":"#2969b0","sc_count_size":12,"checkout_button":"Check out with"};</script>
+  
+
+<section class="features17 cid-rrqhYiluHB" id="features17-1b" data-sortbtn="btn-primary">
+
+  
+    <div class="container-fluid">
+        <div class="row main align-items-center">
+            <div class="col-md-6 image-element align-self-stretch">
+                <div class="img-wrap" style="width: 80%; height: 80%;">
+                    <img src="{% static 'core/images/09.jpg' %}">
+                </div>
+            </div>
+            <div class="col-md-6 text-element">
+                <div class="text-content">
+                    <h2 class="mbr-title pt-2 mbr-fonts-style align-right display-2">
+                        <br>Colección de invierno
+                    </h2>
+                    
+                    <div class="mbr-section-text">
+                        <p class="mbr-text pt-3 mbr-light mbr-fonts-style align-right display-5">Renueva tu armario con la llegada de este invierno. Navega entre nuestros artículos y encuentra lo necesario.</p>
+                    </div>
+                    <div class="mbr-section-btn pt-3 align-right">
+                        <a class="btn btn-md btn-white display-4" href="#shop">Ver colección</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>          
+</section>
+<div class="container" id="shop">
+    <h4 class="py-5">Obtén los mejores productos al menor precio</h4>
+    <div class="row">
+
+      <div class="col-lg-3 mb-4">
+
+        <h1 class="my-4">Filtrar por:</h1>
+        <div class="list-group">
+          <a href="#" class="list-group-item">Category 1</a>
+          <a href="#" class="list-group-item">Category 2</a>
+          <a href="#" class="list-group-item">Category 3</a>
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="row">
+
+          {% for prenda in object_list %}
+            <div class="col-6 col-lg-4 mb-4">
+              <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="{{prenda.imagen_url.url}}" alt="" style="max-height: 180px; min-height: 150px;"></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">{{prenda.descripcion}}</a>
+                  </h4>
+                  <h5>${{prenda.precio}}</h5>
+                </div>
+                <div class="card-footer pb-1">
+                  <a href="{% url 'detallar' prenda.cod_prenda%}" class="btn btn-md btn-danger display-4" id="boton">Ver producto</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+        <!-- /.row -->
+        <div class="d-flex justify-content-center">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              {% if page_obj.has_previous %}
+                <li class="page-item">            
+                  <a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a>    
+                </li>
+            {% else %}
+              <li class="page-item disabled">           
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>     
+                </li>
+              {% endif %}
+              {% if page_obj.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+
+
+<section class="features19 cid-rrqMoiaBvY" id="features19-1i" data-sortbtn="btn-primary">
+
+    
+
+    
+    <div class="container-fluid">
+        <h2 class="mbr-section-title align-left mbr-fonts-style display-2">
+            Mejores Ofertas</h2>
+        <div class="underline align-left pb-3">
+            <div class="line"></div>
+        </div>
+        
+        <div class="row justify-content-center align-items-start pt-5">
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/01.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 50%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Abrigo morado<br>S/76</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://www.paypal.com/cgi-bin/webscr?business=qwer_jv16%40outlook.com&cmd=_xclick&amount=23&item_name=Abrigo+morado&currency_code=USD" class="btn btn-primary-outline display-4" target="_blank">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/02.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 30%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Camiseta manga larga<br>S/99</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://mobirise.com" class="btn btn-primary-outline display-4">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/03.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 45%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Polera negra<br>S/126</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://mobirise.com" class="btn btn-primary-outline display-4">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/04.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 65%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Vestido blanco<br>S/139</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://mobirise.com" class="btn btn-primary-outline display-4">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/05.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 70%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Zapatos Rosa<br>S/79</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://mobirise.com" class="btn btn-primary-outline display-4">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card px-3 py-4 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper flip-card">
+                    <div class="card-img">
+                        <img src="{% static 'core/images/06.jpg' %}" alt="Mobirise">
+                        <div class="img-text mbr-text mbr-fonts-style align-center mbr-white display-7">
+                             Ahorra un 20%
+                        </div>
+                        <div class="img-name mbr-fonts-style mbr-bold mbr-white display-5">
+                            Bolso de tela<br>S/187</div>
+                    </div>
+                    <div class="card-box">
+                        
+                        <div class="mbr-section-btn align-center"><a href="https://mobirise.com" class="btn btn-primary-outline display-4">Comprar</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+{% block js %}
+  <script src="{% static 'core/shopping-cart/minicart.js' %}"></script>
+  <script src="{% static 'core/shopping-cart/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'core/shopping-cart/minicart-customizer.js' %}"></script>
+  <script src="{% static 'core/mobirise-shop/script.js' %}"></script>
+  <script src="{% static 'core/gallery/player.min.js' %}"></script>
+  <script src="{% static 'core/gallery/script.js' %}"></script>
+  <script src="{% static 'core/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+{% endblock %}

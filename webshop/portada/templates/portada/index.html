@@ -1,0 +1,179 @@
+{% extends "core/base_layout.html" %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<script>var shopcartSettings = {"shopcart_top_offset":120,"side_offset":40,"site_width":1150,"shopcart_icon_color":"#FFFFFF","shopcart_back_color":"#000000","shopcart_icon_size":40,"sc_count_color":"#FFFFFF","sc_count_back_color":"#2969b0","sc_count_size":12,"checkout_button":"Check out with"};</script>
+<section class="cid-rrh0hineCE mbr-fullscreen" id="header5-7">
+<!-- ,
+         'scroll-background': scrollBackground -->
+    
+    <div class="scroll-wrapper" style="animation-duration: 30s;"></div>
+    <div class="scroll-wrapper second" style="animation-duration: 30s;"></div>
+    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(255, 255, 255);">
+    </div>
+    <div class="container-fluid text-center block-content" data-stellar-background-ratio=".5">
+      <div class="row justify-content-center slider-wrapper">
+        <div class="col-md-10">
+              <h2 class="mbr-section-title mbr-fonts-style align-left mbr-black display-1">
+                  Tienda de artículos y prendas de vestir</h2>
+              <h4 class="mbr-section-subtitle mbr-fonts-style align-left mbr-black pt-3 display-5">
+                  Contamos con una gran variedad en ropa y calzado que te sorprenderás</h4>
+              <div class="mbr-section-btn align-left pt-3"><a class="btn btn-md btn-success display-4" href="{% url 'blog' %}">Saber más</a></div>
+        </div>
+      </div>
+    </div>
+    
+</section>
+
+<section class="mbr-section article svg-gradient-elements cid-rrh1RfaxnW" id="content6-c">
+
+     
+
+    <svg class="svg-gradient">
+        <linearGradient>
+            <stop class="gradColor1" offset="0%" stop-color="#6f14f1"></stop>
+            <stop class="gradColor2" offset="100%" stop-color="#eb5353"></stop>
+        </linearGradient>  
+    </svg>
+    <div class="container-fluid">
+        <div class="media-container-row">
+            <div class="col-12 col-md-8 col-lg-8">
+                <h2 class="mbr-section-title pb-3 align-left mbr-fonts-style mbr-bold display-2">
+                    Ofertas Semanales</h2>
+                
+                <div class="mbr-text mbr-fonts-style pb-3 display-5">
+                    Cada semana te traemos una nueva oferta en nuestro catálogo. No olvides suscribirte para estar al pendiente de las novedades que te traemos.</div>
+                <div class="mbr-text signature mbr-fonts-style align-left display-7"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section features20 cid-rrh1SBINuT mbr-parallax-background" id="features20-d">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(35, 35, 35);">
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mbr-section-title align-left mbr-fonts-style mbr-white display-2">
+            Recien llegados</h2>
+        
+        <h3 class="mbr-section-subtitle display-5 align-left mbr-fonts-style mbr-light pb-5 mbr-white pt-3">Estos son algunos de nuestras prendas femeninas que nos han llegado esta semana, revisa todos nuestros artículos en nuestro catálogo que tenemos para ti.</h3>
+        <div class="row justify-content-center">
+            {% for portada in object_list %}
+                <div class="card px-3 py-4 col-12 col-md-6 col-lg-3">
+                    <div class="card-wrapper ">
+                        <div class="card-img">
+                            <img src="{{portada.imagen.url}}" alt="" style="max-height: 600px;">
+                        </div>
+                        <div class="card-box">
+                            <p class="mbr-text mbr-fonts-style align-center mbr-white display-5">
+                                {{portada.nombre}}<br><br>
+                                {% if portada.nombre|length < 16%}
+                                <br>
+                                {% endif %}
+                            </p>
+                            <div class="prices align-center">
+                                
+                                <span class="newPrice mbr-fonts-style mbr-bold display-2"><span style="font-weight: normal;">S/{{portada.precio}}</span></span>
+                            </div>
+                                <div class="mbr-section-btn align-center pt-3">
+                                    {% if portada.stock <= 0%}
+                                    <a href="#" class="btn btn-md btn-light display-4" onclick="return false">      
+                                    <del>Agotado</del>
+                                    </a>
+                                    <a href="#" class="btn btn-md btn-light display-4" onclick="return false">
+                                    <del>Añadir</del>
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'detallar' portada.cod_portada%}" class="btn btn-md btn-info display-4">
+                                    Compra     
+                                    </a> 
+                                    <a href="https://www.paypal.com/cgi-bin/webscr?business=qwer_jv16%40outlook.com&cmd=_cart&amount=29%2C53&item_name=Falda&currency_code=USD" class="btn btn-md btn-info display-4">
+                                    Añadir
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+            
+    </div>
+</section>
+
+<section class="features3 cid-rrq9kv2oGs" id="features3-19">
+    
+    
+
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="card p-3 col-12 col-md-6 col-xl-4 col-lg-4">
+                <div class="mx-4">
+                    <div class="card-img pb-4">
+                        <span class="mbri-delivery mbr-iconfont"></span>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">
+                            Acaba de llegar
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Estamos al pendiente de las cantidades de diseños que salen hoy en día al mercado, por eso tratamos de traerte la mayor cantidad posible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-xl-4 col-lg-4">
+                <div class="mx-4">
+                    <div class="card-img pb-4">
+                        <span class="mbri-hearth mbr-iconfont"></span>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">
+                            Nos encanta
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                           La gran acojida que ha tenido nuestra tienda en físico y agradecemos la confianza y seguridad que nos tienen al momento de elegirnos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-xl-4 col-lg-4">
+                <div class="mx-4">
+                    <div class="card-img pb-4">
+                        <span class="mbr-iconfont mbri-like"></span>
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-5">
+                            Éxitos de ventas
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Contamos con una gran seguridad en nuestra tienda virtual que protege los datos de nuestros clientes, es por ello la cantidad de ventas realizadas.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
+
+            
+        </div>
+    </div>
+</section>
+<input name="cookieData" type="hidden" data-cookie-text="We use cookies to give you the best experience. Read our <a href='privacy.html'>cookie policy</a>.">
+{% endblock %}
+{% block js %}
+  <script src="{% static 'core/cookies-alert-plugin/cookies-alert-core.js' %}"></script>
+  <script src="{% static 'core/cookies-alert-plugin/cookies-alert-script.js' %}"></script>
+  <script src="{% static 'core/shopping-cart/minicart.js' %}"></script>
+  <script src="{% static 'core/shopping-cart/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'core/shopping-cart/minicart-customizer.js' %}"></script>
+  <script src="{% static 'core/mbr-gradient-svg/mbr-gradient-svg.js' %}"></script>
+  <script src="{% static 'core/parallax/jarallax.min.js' %}"></script>
+  <script src="{% static 'core/smoothscroll/smooth-scroll.js' %}"></script>
+  <script src="{% static 'core/formoid/formoid.min.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block title%} Enviar Ofertas{% endblock %}
+{% block content %}
+<style type="text/css">
+	#btn{
+		background: #1974AD;
+		color: white;
+		width: 25%;
+		height: 40px;
+		border-radius: 20px 20px 20px 20px;
+	}
+</style>
+	<h1>Enviar Oferta</h1>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<table>
+			{{form.as_table}}
+			{{form.media}}
+		</table>	
+		<button type="submit" id="btn">Enviar a todos</button>
+	</form>
+{% endblock %}

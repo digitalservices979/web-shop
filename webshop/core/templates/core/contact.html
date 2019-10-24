@@ -1,0 +1,109 @@
+{% extends "core/base_layout.html" %}
+{% load static %}
+{% block title %}Contacto{% endblock %}
+{% block cascada%}
+    <link rel="stylesheet" href="{% static 'core/css/mbr-additional.css' %}" type="text/css">
+{% endblock %}
+{% block content %}
+<section class="header15 cid-rrMMKxF8mU mbr-fullscreen mbr-parallax-background" id="header15-5">
+
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(7, 59, 76);"></div>
+
+    <div class="container align-right">
+        <div class="row">
+            <div class="mbr-white col-lg-8 col-md-7 content-container">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">Envíanos tus dudas o sugerencias</h1>
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">
+                    Estamos para brindarte ayuda en cualquier incomodidad que hayas tenido, háznosla saber y te estaremos contestando lo más pronto posible.<br><br><strong>Gracias por tu preferencia</strong></p>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="form-container">
+                    <div class="media-container-column">
+                        <!---Formbuilder Form--->
+                        <form method="POST" action="{% url 'mensajes' %}" class="mbr-form form-with-styler" id="formulario">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="alert alert-success col-12" style="display: none;" id="resultado"></div>
+                            </div>
+                            <div class="dragArea row">
+                                <div class="col-md-12 form-group " data-for="name">
+                                    <input type="text" placeholder="Nombre" required class="form-control px-3 display-7" id="nom" >
+                                </div>
+                                <div class="col-md-12 form-group " data-for="email">
+                                    <input type="email" placeholder="Email" required="required" class="form-control px-3 display-7" id="correo" >
+                                </div>
+                                <div data-for="phone" class="col-md-12 form-group ">
+                                    <input type="tel" placeholder="Teléfono" required class="form-control px-3 display-7" id="telefono" >
+                                </div>
+                                <div data-for="message" class="col-md-12 form-group ">
+                                    <textarea placeholder="Mensaje" required class="form-control px-3 display-7" id="mensaje" ></textarea>
+                                </div>
+                                <div class="col-md-12 input-group-btn"><button type="submit" class="btn btn-secondary btn-form display-4" onsubmit="return enviar(this)">Enviar</button></div>
+                            </div>
+                        </form><!---Formbuilder Form--->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+        <a href="#next">
+            <i class="mbri-down mbr-iconfont"></i>
+        </a>
+    </div>
+</section>
+
+<section class="mbr-section contacts1 cid-rrMPDCVrnj" id="contacts1-8">
+    <!---->
+    
+    <!---->
+    <!--Overlay-->
+    
+    <!--Container-->
+    <div class="container">
+        <div class="row">
+            <!--Titles-->
+            <div class="title col-12">
+                <h2 class="align-left mbr-fonts-style display-1">
+                    Nos puedes encontrar en:<br><br></h2>
+                
+            </div>
+            <!--Left-->
+            <div class="col-12 col-md-6">
+                <div class="left-block wrapper">
+                    <div class="b b-adress">
+                        <h5 class="align-left mbr-fonts-style m-0 display-5">
+                            Dirección:</h5>
+                        <p class="mbr-text align-left mbr-fonts-style display-7">
+                            Av Brasil 3416, Magdalena del Mar 15086
+                        </p>
+                    </div>
+                    <div class="b b-phone">
+                        <h5 class="align-left mbr-fonts-style m-0 display-5">
+                            Teléfono:</h5>
+                        <p class="mbr-text align-left mbr-fonts-style display-7">
+                            +51 979553424</p>
+                    </div>
+                    <div class="b b-mail">
+                        <h5 class="align-left mbr-fonts-style m-0 display-5">
+                            E-mail:
+                        </h5>
+                        <p class="mbr-text align-left mbr-fonts-style display-7">
+                            digitalservices979@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <!--Right-->
+            <div class="col-12 col-md-6">
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d975.3289588771926!2d-77.06776128434842!3d-12.090517320492555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9a88e3175f5%3A0x84397196c8b1395f!2sSupermercado+Candy!5e0!3m2!1ses-419!2spe!4v1559063952437!5m2!1ses-419!2spe" allowfullscreen=""></iframe></div>
+            </div>
+        </div>
+    </div>
+</section>
+</script>
+{% endblock %}
+{% block js%}
+  <script src="{% static 'core/parallax/jarallax.min.js' %}"></script>
+  <script src="{% static 'core/formoid/formoid.min.js' %}"></script>
+  <script src="{% static 'core/js/forms.js' %}"></script>
+{% endblock %}
